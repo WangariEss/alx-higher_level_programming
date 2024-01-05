@@ -1,6 +1,5 @@
-{ Error: ENOENT: no such file or directory, open 'doesntexist'
-    at Error (native)
-  errno: -2,
-  code: 'ENOENT',
-  syscall: 'open',
-  path: 'doesntexist' }
+#!/usr/bin/node
+const fs = require('fs');
+fs.readFile(process.argv[2], 'utf8', function (error, content) {
+  console.log(error || content);
+});
